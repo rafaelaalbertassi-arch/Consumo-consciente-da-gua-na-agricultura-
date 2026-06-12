@@ -1,0 +1,518 @@
+/* ================================================
+   style.css — Uso Consciente da Água na Agricultura
+   Paleta: verde-floresta, azul-água, bege-terra
+   ================================================ */
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde-escuro:   #2d6a4f;
+  --verde-medio:    #40916c;
+  --verde-claro:    #74c69d;
+  --azul-agua:      #2176ae;
+  --azul-claro:     #a8dadc;
+  --bege:           #f5f9f0;
+  --bege-escuro:    #e8f0e0;
+  --marrom:         #6b4c2a;
+  --texto:          #1b1b1b;
+  --texto-suave:    #4a5568;
+  --branco:         #ffffff;
+
+  --sombra-leve:    0 2px 16px rgba(0,0,0,0.08);
+  --sombra-media:   0 4px 28px rgba(0,0,0,0.13);
+  --raio:           14px;
+  --transicao:      0.35s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bege);
+  color: var(--texto);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ---------- CABEÇALHO ---------- */
+.header {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--azul-agua) 100%);
+  color: var(--branco);
+  text-align: center;
+  padding: 4.5rem 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos de fundo */
+.header::before,
+.header::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  background: var(--branco);
+}
+.header::before { width: 400px; height: 400px; top: -180px; left: -120px; }
+.header::after  { width: 300px; height: 300px; bottom: -60px; right: -80px; }
+
+.header-icon {
+  font-size: 3.4rem;
+  animation: float 3.5s ease-in-out infinite;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-10px); }
+}
+
+.header-title {
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 0.6rem;
+}
+
+.header-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  opacity: 0.88;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.header-wave {
+  line-height: 0;
+}
+.header-wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* ---------- SEÇÕES ---------- */
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--verde-escuro);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title.light { color: var(--branco); }
+
+.section-subtitle {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 1rem;
+  margin-bottom: 2.8rem;
+}
+.section-subtitle.light { color: rgba(255,255,255,0.8); margin-bottom: 2.8rem; }
+
+/* Linha decorativa sob os títulos */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--verde-claro);
+  margin: 0.5rem auto 1.4rem;
+}
+.section-title.light::after { background: var(--azul-claro); }
+
+/* ---------- INTRODUÇÃO ---------- */
+.intro { background: var(--bege); }
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.intro-card {
+  background: var(--branco);
+  border-radius: var(--raio);
+  padding: 2rem 1.6rem;
+  box-shadow: var(--sombra-leve);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  border-top: 4px solid var(--verde-claro);
+}
+
+.intro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+}
+
+.intro-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.intro-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.intro-card p {
+  font-size: 0.93rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- BOAS PRÁTICAS ---------- */
+.practices {
+  background: linear-gradient(160deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.practice-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--raio);
+  padding: 2rem 1.4rem;
+  text-align: center;
+  color: var(--branco);
+  backdrop-filter: blur(4px);
+  transition: background var(--transicao), transform var(--transicao);
+}
+
+.practice-card:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px);
+}
+
+.practice-icon {
+  font-size: 2.6rem;
+  margin-bottom: 0.9rem;
+  display: block;
+}
+
+.practice-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.practice-card p {
+  font-size: 0.88rem;
+  opacity: 0.88;
+  line-height: 1.6;
+}
+
+/* ---------- QUIZ ---------- */
+.quiz-section { background: var(--bege-escuro); }
+
+.quiz-box {
+  background: var(--branco);
+  border-radius: var(--raio);
+  padding: 2.4rem 2rem;
+  box-shadow: var(--sombra-media);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  margin-bottom: 1.8rem;
+}
+
+.quiz-counter {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--verde-medio);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Barra de progresso */
+.progress-bar {
+  height: 8px;
+  background: var(--bege-escuro);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde-medio), var(--azul-agua));
+  border-radius: 4px;
+  width: 10%;
+  transition: width 0.5s ease;
+}
+
+/* Pergunta */
+.question-area { min-height: 200px; }
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+
+  /* Animação de entrada */
+  animation: fadeSlideIn 0.4s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.options-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-item {
+  border: 2px solid var(--bege-escuro);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color var(--transicao), background var(--transicao), transform 0.2s;
+  animation: fadeSlideIn 0.4s ease both;
+}
+
+.option-item:nth-child(2) { animation-delay: 0.06s; }
+.option-item:nth-child(3) { animation-delay: 0.12s; }
+.option-item:nth-child(4) { animation-delay: 0.18s; }
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.97rem;
+  color: var(--texto);
+  text-align: left;
+}
+
+.option-letter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bege-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--verde-escuro);
+  flex-shrink: 0;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+/* Hover — antes de responder */
+.option-item:not(.disabled):hover {
+  border-color: var(--verde-claro);
+  background: var(--bege);
+  transform: translateX(4px);
+}
+
+.option-item:not(.disabled):hover .option-letter {
+  background: var(--verde-claro);
+  color: var(--branco);
+}
+
+/* Estado: selecionada (antes de confirmar) */
+.option-item.selected {
+  border-color: var(--azul-agua);
+  background: #eaf4fb;
+}
+.option-item.selected .option-letter {
+  background: var(--azul-agua);
+  color: var(--branco);
+}
+
+/* Estado: correta */
+.option-item.correct {
+  border-color: var(--verde-medio);
+  background: #edfaf4;
+}
+.option-item.correct .option-letter {
+  background: var(--verde-medio);
+  color: var(--branco);
+}
+
+/* Estado: errada */
+.option-item.wrong {
+  border-color: #e53e3e;
+  background: #fff5f5;
+}
+.option-item.wrong .option-letter {
+  background: #e53e3e;
+  color: var(--branco);
+}
+
+/* Desabilita cliques após responder */
+.option-item.disabled { cursor: not-allowed; }
+.option-item.disabled .option-btn { cursor: not-allowed; }
+
+/* Feedback */
+.feedback {
+  min-height: 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+.feedback.correct-msg { color: var(--verde-escuro); background: #edfaf4; }
+.feedback.wrong-msg   { color: #9b2c2c;             background: #fff5f5; }
+
+/* Botão Próxima */
+.quiz-footer {
+  margin-top: 1.6rem;
+  text-align: right;
+}
+
+.btn-next {
+  background: var(--verde-escuro);
+  color: var(--branco);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transicao), transform 0.2s, opacity var(--transicao);
+}
+
+.btn-next:disabled {
+  background: #b0c4b8;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.btn-next:not(:disabled):hover {
+  background: var(--verde-medio);
+  transform: translateY(-2px);
+}
+
+/* ---------- RESULTADO ---------- */
+.result-box {
+  background: var(--branco);
+  border-radius: var(--raio);
+  padding: 3rem 2rem;
+  box-shadow: var(--sombra-media);
+  max-width: 520px;
+  margin: 2rem auto 0;
+  text-align: center;
+  animation: fadeSlideIn 0.5s ease;
+}
+
+.result-icon { font-size: 4rem; margin-bottom: 0.8rem; }
+
+.result-score {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.result-message {
+  font-size: 1rem;
+  color: var(--texto-suave);
+  margin-bottom: 1.8rem;
+}
+
+.btn-retry {
+  background: linear-gradient(135deg, var(--verde-escuro), var(--azul-agua));
+  color: var(--branco);
+  border: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-retry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(33,118,174,0.35);
+}
+
+/* Utilitário */
+.hidden { display: none !important; }
+
+/* ---------- ANIMAÇÃO DE REVEAL AO ROLAR ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Atrasos escalonados para os cards */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+.reveal:nth-child(5) { transition-delay: 0.4s; }
+
+/* ---------- RODAPÉ ---------- */
+.footer {
+  background: var(--verde-escuro);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 0.93rem;
+  line-height: 1.8;
+}
+
+.footer strong { color: var(--branco); }
+
+.footer-copy {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 640px) {
+  .quiz-box { padding: 1.6rem 1rem; }
+  .btn-next { width: 100%; text-align: center; }
+  .quiz-footer { text-align: center; }
+  .intro-grid, .practices-grid { grid-template-columns: 1fr; }
+}
+
+/* Respeitar preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .header-icon { animation: none; }
+}

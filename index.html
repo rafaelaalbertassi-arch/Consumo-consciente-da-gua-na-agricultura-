@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uso Consciente da Água na Agricultura</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-icon">💧</div>
+      <h1 class="header-title">Uso Consciente da Água na Agricultura</h1>
+      <p class="header-subtitle">Produzir alimentos preservando os recursos hídricos para as futuras gerações.</p>
+    </div>
+    <div class="header-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f5f9f0"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== INTRODUÇÃO ===== -->
+    <section class="section intro" id="introducao">
+      <div class="container">
+        <h2 class="section-title">O que é o Uso Consciente da Água?</h2>
+        <div class="intro-grid">
+
+          <div class="intro-card reveal">
+            <span class="intro-icon">🌱</span>
+            <h3>Conceito</h3>
+            <p>Usar a água de forma consciente significa aplicar apenas o volume necessário, no momento certo e da maneira mais eficiente possível — evitando desperdícios e preservando os recursos hídricos para quem virá depois de nós.</p>
+          </div>
+
+          <div class="intro-card reveal">
+            <span class="intro-icon">🌾</span>
+            <h3>Importância para a Agricultura</h3>
+            <p>A agricultura responde por cerca de 70% do consumo mundial de água doce. Sem ela, não há colheita, não há alimento. Usar esse recurso com inteligência garante a produtividade do campo e a segurança alimentar das cidades.</p>
+          </div>
+
+          <div class="intro-card reveal">
+            <span class="intro-icon">⚠️</span>
+            <h3>Impactos do Desperdício</h3>
+            <p>O uso excessivo e sem planejamento esgota aquíferos, assoreamento de rios, degrada nascentes e amplifica secas. Regiões inteiras já enfrentam crises hídricas severas causadas por décadas de uso irresponsável da água no campo.</p>
+          </div>
+
+          <div class="intro-card reveal">
+            <span class="intro-icon">🤝</span>
+            <h3>Benefícios da Sustentabilidade</h3>
+            <p>Produtores que adotam práticas sustentáveis reduzem custos operacionais, aumentam a resiliência a secas e valorizam suas propriedades. O meio ambiente, os rios e as comunidades ao redor se beneficiam igualmente.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BOAS PRÁTICAS ===== -->
+    <section class="section practices" id="boas-praticas">
+      <div class="container">
+        <h2 class="section-title light">Boas Práticas no Campo</h2>
+        <p class="section-subtitle light">Técnicas que todo agricultor pode adotar para usar a água com responsabilidade.</p>
+
+        <div class="practices-grid">
+
+          <div class="practice-card reveal">
+            <div class="practice-icon">💧</div>
+            <h3>Irrigação por Gotejamento</h3>
+            <p>Entrega água diretamente na raiz da planta, reduzindo perdas por evaporação e escoamento em até 60% em comparação com sistemas tradicionais de inundação.</p>
+          </div>
+
+          <div class="practice-card reveal">
+            <div class="practice-icon">🌧️</div>
+            <h3>Captação de Água da Chuva</h3>
+            <p>Cisternas e reservatórios coletam a água das chuvas para uso posterior na irrigação, reduzindo a dependência de fontes subterrâneas e diminuindo custos com bombeamento.</p>
+          </div>
+
+          <div class="practice-card reveal">
+            <div class="practice-icon">📊</div>
+            <h3>Monitoramento da Umidade do Solo</h3>
+            <p>Sensores e tensiômetros indicam o momento exato em que a planta precisa de água, eliminando irrigações desnecessárias e prevenindo o encharcamento do solo.</p>
+          </div>
+
+          <div class="practice-card reveal">
+            <div class="practice-icon">🌿</div>
+            <h3>Proteção de Nascentes</h3>
+            <p>Preservar a mata ciliar ao redor de nascentes e córregos garante a recarga dos aquíferos e mantém o volume dos rios durante períodos de estiagem.</p>
+          </div>
+
+          <div class="practice-card reveal">
+            <div class="practice-icon">♻️</div>
+            <h3>Reutilização de Água</h3>
+            <p>Águas residuárias tratadas de estábulos, lavagens e beneficiamento podem ser reutilizadas na irrigação de culturas não alimentares, fechando o ciclo hídrico na propriedade.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUIZ ===== -->
+    <section class="section quiz-section" id="quiz">
+      <div class="container">
+        <h2 class="section-title">Teste seus Conhecimentos</h2>
+        <p class="section-subtitle">10 questões sobre o uso consciente da água na agricultura.</p>
+
+        <div class="quiz-box" id="quizBox">
+
+          <!-- Progresso -->
+          <div class="quiz-header">
+            <span class="quiz-counter" id="questionCounter">Questão 1 de 10</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <!-- Pergunta -->
+          <div class="question-area" id="questionArea">
+            <p class="question-text" id="questionText"></p>
+            <ul class="options-list" id="optionsList"></ul>
+          </div>
+
+          <!-- Feedback -->
+          <div class="feedback" id="feedback"></div>
+
+          <!-- Botão -->
+          <div class="quiz-footer">
+            <button class="btn-next" id="btnNext" disabled>Próxima →</button>
+          </div>
+
+        </div>
+
+        <!-- Resultado final -->
+        <div class="result-box hidden" id="resultBox">
+          <div class="result-icon" id="resultIcon"></div>
+          <h3 class="result-score" id="resultScore"></h3>
+          <p class="result-message" id="resultMessage"></p>
+          <button class="btn-retry" id="btnRetry">🔄 Refazer Quiz</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>🌍 <strong>Sustentabilidade é responsabilidade de todos.</strong> Cada gota economizada hoje garante colheitas para amanhã.</p>
+      <p class="footer-copy">Uso Consciente da Água na Agricultura · Educação Ambiental</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
